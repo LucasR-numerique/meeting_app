@@ -77,6 +77,7 @@ app.controller('MeetingAppSubjectsPlanCtrl', ['$scope', '$route', '$routeParams'
 
         $scope.delete_subject = function (id_subject) {
 
+
             var modalInstance = $uibModal.open({
 
                 animation: true,
@@ -245,6 +246,7 @@ app.controller('MeetingAppSubjectsPlanCtrl', ['$scope', '$route', '$routeParams'
 
         $scope.delete_note = function (id_note) {
             if ( id_note ){
+
             //console.log($scope.delete);
             console.log(id_note);
             var modalInstance = $uibModal.open({
@@ -286,10 +288,12 @@ app.controller('MeetingAppSubjectsPlanCtrl', ['$scope', '$route', '$routeParams'
                         if (response.status == 200) {
                             loadNotes() ;
                         }
+                        $scope.edition_encours_global = false ;
                     });
                 }
 
             }, function () {
+
                     //console.log("rien");
 
                 });
@@ -336,6 +340,8 @@ app.controller('MeetingAppSubjectsPlanCtrl', ['$scope', '$route', '$routeParams'
             $scope.edition_encours_global = false ;
         };
 
+
+        
         $scope.cancel_note = function (note, $event) {
             note.edition_encours = false ;
             $event.stopPropagation();
