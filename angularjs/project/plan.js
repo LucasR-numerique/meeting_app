@@ -8,16 +8,14 @@ app.controller('MeetingAppPlanCtrl', ['$scope', '$route', '$routeParams', '$loca
             $http.get('/meeting_app/project/getAll').then(function (response) {
                 if (response.status == 200) {
                     $scope.projects = response.data ;
-
-                    console.log(response.data);
-
+                    console.log("toto");
                 }
             });
         };
         loadList() ;
 
 
-
+        /*********** Delete project with id_project in argument ***********/
 
         $scope.delete_project = function (id_project) {
             //console.log($scope.delete);
@@ -76,16 +74,17 @@ app.controller('MeetingAppPlanCtrl', ['$scope', '$route', '$routeParams', '$loca
         };
 
 
-
+        /******** Call addMeet Modal *********/
 
         $scope.addMeet = function (id_project) {
-            console.log(id_project);
             zeapps_modal.loadModule("meeting_app", "addMeet", {id_project:id_project}, function(objReturn) {
 
-                loadList() ;
+            loadList();
             });
 
         };
+
+
 
 
 

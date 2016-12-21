@@ -53,18 +53,6 @@ app.controller('MeetingAppModalAddMeetFormCtrl', function($scope, $uibModalInsta
 
 
 
-    var loadList = function () {
-
-        $http.get('/meeting_app/meet/getMeetByProject/'+ $routeParams.id).then(function (response) {
-            if (response.status == 200) {
-                $scope.meets = response.data ;
-
-            }
-        });
-    };
-    loadList() ;
-
-
 
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
@@ -80,6 +68,7 @@ app.controller('MeetingAppModalAddMeetFormCtrl', function($scope, $uibModalInsta
             }
         });
     }
+
 
 
 

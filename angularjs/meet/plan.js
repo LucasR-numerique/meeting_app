@@ -90,5 +90,9 @@ app.controller('MeetingAppMeetPlanCtrl', ['$scope', '$route', '$routeParams', '$
 
         };
 
+
+
+
+
     }]);
 

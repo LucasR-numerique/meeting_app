@@ -50,6 +50,8 @@ app.controller('MeetingAppProjectsFormCtrl', ['$scope', '$route', '$routeParams'
             $location.path("/ng/meeting_app/project/plan");
         }
 
+
+
     }]);
 
 

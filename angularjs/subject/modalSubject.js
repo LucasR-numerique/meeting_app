@@ -24,14 +24,14 @@ app.controller('MeetingAppModalSubjectsFormCtrl', function($scope, $uibModalInst
         var subject = false;
         /************ Check if fields(name and description) are completed *************/
 
-        if ($scope.form.name != undefined && $scope.form.description != undefined) {
+        if ($scope.form.name != undefined) {
             if ($routeParams.id_meet && $routeParams.id_meet != 0 && $routeParams.id_project && $routeParams.id_project != 0 ) {
                 $data.id_meet = $routeParams.id_meet;
                 $data.id_project = $routeParams.id_project;
             }
 
             $data.name = $scope.form.name;
-            $data.description = $scope.form.description;
+
 
 
             $http.post('/meeting_app/subject/save', $data).then(function (obj) {

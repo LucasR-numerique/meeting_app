@@ -11,6 +11,11 @@ app.config(['$routeProvider',
                 controller: 'MeetingAppSubjectsFormCtrl'
             })
 
+            .when('/ng/meeting_app/user/:id', {
+                templateUrl: '/meeting_app/subject/plan',
+                controller: 'MeetingAppSubjectsPlanCtrl'
+            })
+
 
         ;
     }]);
